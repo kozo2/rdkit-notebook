@@ -3,7 +3,7 @@ RUN cd; apt update; apt install -y wget flex bison build-essential python-numpy 
 
 # matplotlib and jupyter
 RUN apt-get install -y libfreetype6-dev libpng-dev pkg-config pandoc
-RUN pip install matplotlib jupyter
+RUN wget https://bootstrap.pypa.io/get-pip.py; python get-pip.py; pip install matplotlib jupyter
 
 EXPOSE 8888
 CMD PYTHONPATH=~/rdkit-Release_2015_09_2/ LD_LIBRARY_PATH=~/rdkit-Release_2015_09_2/lib jupyter-notebook --notebook-dir='/root' --no-browser --ip='*' --port 8888
