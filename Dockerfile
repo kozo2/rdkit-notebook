@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 RUN apt update; apt install -y wget flex bison build-essential python-numpy cmake python-dev sqlite3 libsqlite3-dev libboost-dev libboost-system-dev libboost-thread-dev libboost-serialization-dev libboost-python-dev libboost-regex-dev
 RUN cd; wget https://github.com/rdkit/rdkit/archive/Release_2015_09_2.tar.gz; tar xf Release_2015_09_2.tar.gz; cd rdkit-Release_2015_09_2; mkdir build; cd build; cmake ..
-RUN cd ~/rdkit-Release_2015_09_2/build; ls; make
+RUN cd ~/rdkit-Release_2015_09_2/build; ls
 #RUN make install
 
 # matplotlib and jupyter
